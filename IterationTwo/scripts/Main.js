@@ -48,22 +48,22 @@ function startGame() {
 new p5();
 
 function preload() {
-    button = loadImage('assets/button.png');
-    playButtonImage = loadImage('assets/playButton.png');
-    settingsButtonImage = loadImage('assets/settingsButton.png');
-    muteButtonImage = loadImage('assets/muteButton.png');
-    soundButtonImage = loadImage('assets/soundButton.png');
-    replayButtonImage = loadImage('assets/replayButton.png');
+    button = loadImage('IterationTwo/assets/button.png');
+    playButtonImage = loadImage('IterationTwo/assets/playButton.png');
+    settingsButtonImage = loadImage('IterationTwo/assets/settingsButton.png');
+    muteButtonImage = loadImage('IterationTwo/assets/muteButton.png');
+    soundButtonImage = loadImage('IterationTwo/assets/soundButton.png');
+    replayButtonImage = loadImage('IterationTwo/assets/replayButton.png');
 
     //UI sprites.
-    heart = loadImage('assets/heart.png');
-    emptyHeart = loadImage('assets/emptyHeart.png');
-    coinImage = loadImage('assets/coin.png');
-    defaultWeaponImage = loadImage('assets/defaultWeaponImage.gif');
+    heart = loadImage('IterationTwo/assets/heart.png');
+    emptyHeart = loadImage('IterationTwo/assets/emptyHeart.png');
+    coinImage = loadImage('IterationTwo/assets/coin.png');
+    defaultWeaponImage = loadImage('IterationTwo/assets/defaultWeaponImage.gif');
 
     //Load font families.
-    titleFont = loadFont('/assets/krok.otf');
-    pixelFont = loadFont('/assets/pixelated.ttf');
+    titleFont = loadFont('IterationTwo/assets/krok.otf');
+    pixelFont = loadFont('IterationTwo/assets/pixelated.ttf');
 
     displaceColorsSrc = `
     precision highp float;
@@ -215,3 +215,4 @@ function draw() {
     //Correct camera roll to default rotation.
     correctCameraRoll();
 }
+
