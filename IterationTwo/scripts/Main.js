@@ -61,8 +61,8 @@ function preload() {
     coinImage = loadImage('assets/coin.png');
     defaultWeaponImage = loadImage('assets/defaultWeaponImage.gif');
 
-    //Load font families.
-    titleFont = loadFont('assets/krok.otf');
+    //Load font families.('assets/krok.otf');
+    titleFont = loadFont('assets/pixelated.ttf');
     pixelFont = loadFont('assets/pixelated.ttf');
 
     displaceColorsSrc = `
@@ -215,5 +215,6 @@ function draw() {
     //Correct camera roll to default rotation.
     correctCameraRoll();
 }
+
 
 
