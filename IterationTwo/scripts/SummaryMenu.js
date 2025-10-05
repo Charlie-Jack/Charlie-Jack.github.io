@@ -16,7 +16,7 @@ class SummaryMenu {
         //Create spinning text.
         push();
             textFont(titleFont);
-            textSize(300);
+            textSize(150);
             textAlign(CENTER, CENTER);
             translate(0, -300, 200);
             rotateZ(-25 / 600);   
@@ -63,3 +63,4 @@ class RestartButton extends Button {
         pop();  
     }
 }
+
