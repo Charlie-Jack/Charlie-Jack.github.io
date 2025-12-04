@@ -1,0 +1,71 @@
+/*Created by: Charlie Simpkins
+06-10-2025: Added summary menu.
+            Created restart button subclass.
+10-10-2025: Updated restart button sprite.
+03-12-2025: Added inline comments to all classes.
+            Added additional tracked elements to the summary menu.
+Last updated: 03-12-2025 */
+
+class SummaryMenu {
+    constructor() {
+        this.angle = 0;
+    }
+    //Draw summary menu object to canvas. 
+    draw() {
+        noStroke();
+        push(); //Convert to 3D horizontal plane.
+            fill('#FC9EB0');
+            translate(0, 0, -500);
+            plane(windowWidth, windowHeight); //Scales cells to window size.
+        pop();
+        //Create 'game over' spinning text.
+        push();
+            textFont(titleFont);
+            textSize(300);
+            textAlign(CENTER, CENTER);
+            translate(0, -300, 200);
+            rotateZ(-25 / 600); //Rotates all text elements between two set values.
+            if (this.angle % 50 > 25) {
+                rotateZ((this.angle % 50) / 600);
+            } else {
+                rotateZ((50 -this.angle % 50) / 600);   
+            }
+            this.angle++;
+            stroke('#180832');
+            fill('#FFF5F1');
+            text('game over', 0, 0);
+        pop(); 
+    }
+}
+
+class RestartButton extends Button {
+    constructor(x, y, width, height) {
+        super(x, y, width, height, scale, rotate);
+    }
+    //Detect whenever the user's cursor is hovering over the button sprite.
+    detectCursor() {
+        this.scale = 1;
+        this.rotate = false;
+        if (mouseX >= (this.x - this.width/2) && mouseX <= (this.x + this.width/2) && mouseY >= (this.y - this.height/2) && mouseY <= (this.y + this.height/2)) {
+            this.scale = 1.1; //Adds responsiveness to hover.   
+            this.rotate = true;         
+            if (click) {
+                healthBar.health = healthBar.maxHealth; //Prompts switch to the start menu.
+                selectionSound.play();
+                newRoom();
+                click = false;  
+            }
+        }
+    }
+    //Draws the button to canvas.
+    draw() {
+        push(); 
+            texture(replayButtonImage);
+            translate(this.x - windowWidth/2, this.y - windowHeight/2, 0);
+            if (this.rotate) {
+                rotateX(100);
+            }
+            plane(this.width * this.scale, this.height * this.scale); 
+        pop();  
+    }
+}
