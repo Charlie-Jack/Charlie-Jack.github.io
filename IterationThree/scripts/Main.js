@@ -85,7 +85,7 @@ function preload() {
     checkboxFullImage = loadImage('assets/checkboxFull.png');
 
     //Load font families.
-    titleFont = loadFont('assets/krok.ttf');
+    titleFont = loadFont('assets/Krok.ttf');
     pixelFont = loadFont('assets/pixelated.ttf');
 
     //Load sounds.
@@ -280,4 +280,5 @@ function draw() {
     //Correct the camera roll to its default rotation.
     correctCameraRoll();
 }
+
 
