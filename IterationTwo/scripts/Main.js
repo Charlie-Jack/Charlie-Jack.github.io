@@ -62,7 +62,7 @@ function preload() {
     defaultWeaponImage = loadImage('assets/defaultWeaponImage.gif');
 
     //Load font families.('assets/krok.otf');
-    titleFont = loadFont('assets/pixelated.ttf');
+    titleFont = loadFont('assets/Krok.ttf');
     pixelFont = loadFont('assets/pixelated.ttf');
 
     displaceColorsSrc = `
@@ -215,6 +215,7 @@ function draw() {
     //Correct camera roll to default rotation.
     correctCameraRoll();
 }
+
 
 
 
