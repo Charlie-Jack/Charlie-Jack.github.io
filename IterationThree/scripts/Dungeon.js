@@ -137,6 +137,14 @@ class Tutorial {
                 }
                 break;
             case 4: //Tutorial stage three, teaching the ability to damage enemies using projectiles.
+                //Draws E key sprite to canvas.
+                push(); 
+                    noStroke();
+                    texture(keyEImage);
+                    translate(-windowWidth * 0.45, 2* windowHeight/3, 0); //Adjustments to allow for orthographic drawing style.
+                    rotate(QUARTER_PI, [0, 1, 0]);
+                    plane(130, 150); 
+                pop();
                 //Create tutorial information text.
                 push();
                     textFont(pixelFont);
@@ -169,6 +177,14 @@ class Tutorial {
                 }
                 break; 
             case 6: //Tutorial stage five, teaching the ability to enter doors and progress to the next dungeon stage.
+                //Draws E key sprite to canvas.
+                push(); 
+                    noStroke();
+                    texture(keyEImage);
+                    translate(-windowWidth * 0.45, 2* windowHeight/3, 0); //Adjustments to allow for orthographic drawing style.
+                    rotate(QUARTER_PI, [0, 1, 0]);
+                    plane(130, 150); 
+                pop();
                 //Create tutorial information text.
                 push();
                     textFont(pixelFont);
@@ -224,4 +240,5 @@ function newRoom() {
     endNode = grid[columns - 1][rows - 1]; 
     //Prevents start and end nodes from being blocked.
     startNode.wall = false;
+
 }
