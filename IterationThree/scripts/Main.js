@@ -74,8 +74,10 @@ function preload() {
     keyAImage = loadImage('assets/keys/keyA.png');
     keySImage = loadImage('assets/keys/keyS.png');
     keyDImage = loadImage('assets/keys/keyD.png');
+    keyEImage = loadImage('assets/keys/keyE.png');
 
     //UI sprites.
+    gunImage = loadImage('assets/gun/gunTypes.gif');
     heart = loadImage('assets/heart.png');
     emptyHeart = loadImage('assets/emptyHeart.png');
     coinImage = loadImage('assets/coin.png');
@@ -280,5 +282,6 @@ function draw() {
     //Correct the camera roll to its default rotation.
     correctCameraRoll();
 }
+
 
 
