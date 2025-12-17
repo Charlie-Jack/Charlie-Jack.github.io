@@ -19,20 +19,21 @@ class Weapon {
         this.level = level;
         this.rarity = floor(this.level/5);
         this.colourVariations = ["red", "orange", "yellow", "green", "blue", "purple", "black"];
+        this.gunTexture = gunTypes[this.rarity];
     }
     //Draws weapon user interface to canvas.
     drawIcon() {
         //Create weapon sprite display.
-        let gunState = gunImage.get();
         push(); 
             noStroke();
-            //Change sprite to match rarity.
             if (this.rarity < this.colourVariations.length) {
-                gunImage.setFrame(this.rarity);
+                this.gunTexture = gunTypes[this.rarity];
             } else {
-                gunImage.setFrame(floor(random(this.rarity)));
+                if (random(1) < 0.3) {
+                    this.gunTexture = gunTypes[floor(random(7))];
+                }
             }
-            texture(gunState);
+            texture(this.gunTexture);
             translate(2 * windowWidth/7, -2 * windowHeight/5, -2 * windowWidth/7); //Adjustments to allow for orthographic drawing style.
             rotate(QUARTER_PI, [0, 1, 0]);
             plane(400, 480); 
@@ -106,4 +107,5 @@ class BasicProjectile {
         pop();
     }
 }
+
 
