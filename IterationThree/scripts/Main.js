@@ -86,6 +86,16 @@ function preload() {
     checkboxEmptyImage = loadImage('assets/checkboxEmpty.png');
     checkboxFullImage = loadImage('assets/checkboxFull.png');
 
+    //Gun Types sprites.
+    redGun = loadImage('assets/gun/gunRed.png');
+    orangeGun = loadImage('assets/gun/gunOrange.png');
+    yellowGun = loadImage('assets/gun/gunYellow.png');
+    greenGun = loadImage('assets/gun/gunGreen.png');
+    blueGun = loadImage('assets/gun/gunBlue.png');
+    purpleGun = loadImage('assets/gun/gunPurple.png');
+    blackGun = loadImage('assets/gun/gunBlack.png');
+    gunTypes = [redGun, orangeGun, yellowGun, greenGun, blueGun, purpleGun, blackGun, gunImage];
+
     //Load font families.
     titleFont = loadFont('assets/Krok.ttf');
     pixelFont = loadFont('assets/pixelated.ttf');
@@ -282,6 +292,7 @@ function draw() {
     //Correct the camera roll to its default rotation.
     correctCameraRoll();
 }
+
 
 
 
